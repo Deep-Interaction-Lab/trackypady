@@ -21,16 +21,16 @@ function showPairingLink() {
   const name = parameters.get("name");
   const valid = fragment.length <= 512 && keys.length === 3 && new Set(keys).size === 3 &&
     keys.every(key => ["v", "name", "code"].includes(key)) && parameters.get("v") === "1" &&
-    /^[0-9A-F]{24}$/.test(code) && name === `Project X Touch ${code.slice(0, 8)}`;
+    /^[0-9A-F]{24}$/.test(code) && name === `Trackypady ${code.slice(0, 8)}`;
 
   if (valid) {
     const pairing = new URLSearchParams({ v: "1", name, code });
     // URLSearchParams uses + for spaces, whereas the native parser uses %20.
-    openApp.href = `projectx-touch://pair?${pairing.toString().replace(/\+/g, "%20")}`;
+    openApp.href = `trackypady://pair?${pairing.toString().replace(/\+/g, "%20")}`;
     openApp.hidden = false;
   }
 
-  const links = window.projectXLinks;
+  const links = window.trackypadyLinks;
   const appStoreReady = /^https:\/\/apps\.apple\.com\/(?:[a-z]{2}\/)?app\/(?:[\w-]+\/)?id[0-9]+$/.test(links.appStoreURL || "");
   const betaReady = /^https:\/\/testflight\.apple\.com\/j\/[A-Za-z0-9]{8}$/.test(links.testFlightURL || "");
   const downloadURL = appStoreReady ? links.appStoreURL : links.testFlightURL;
