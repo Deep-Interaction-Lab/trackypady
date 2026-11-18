@@ -1,0 +1,12 @@
+:root { font-family: "Inter", system-ui, sans-serif; color: #263630; background: #f4f2e9; color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 470px; margin: 0 auto; padding: clamp(32px, 9vh, 90px) 28px 40px; }
+.brand { font-size: 15px; font-weight: 600; margin-bottom: 48px; }
+h1 { font-size: clamp(38px, 10vw, 54px); line-height: 1.06; letter-spacing: -0.04em; font-weight: 600; }
+p { line-height: 1.6; }
+.button { display: block; padding: 16px 20px; border-radius: 14px; margin: 16px 0; text-align: center; background: #263630; color: #fff; text-decoration: none; font-weight: 600; }
+.secondary { background: transparent; color: #263630; border: 1px solid #84978c; }
+[hidden] { display: none !important; }
+.help, #status { font-size: 14px; color: #53645a; }
+a:focus-visible { outline: 3px solid #478a67; outline-offset: 4px; }
